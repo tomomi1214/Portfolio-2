@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Contact Page</title>
+        <script src="jquery-3.5.1.min.js"></script>
+        <script src="anime.min.js"></script>
+        <script src="js/script.js"></script>
+
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="pc-nav">            
+                <ul>
+                    <li><a href="index_responsive.html#profile">Profile</a></li>
+                    <li><a href="index_responsive.html#skills">Skills</a></li>                    
+                    <li><a href="index_responsive.html#works">Works</a></li>
+                </ul>
+            </div>
+            <div class="mobile-nav-category">
+                <ul>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Skills</a></li>
+                    <li><a href="#">Works</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li class="close"><span>Close</span></li>
+                </ul>
+            </div>
+            <div id="mobile-nav">
+                <span></span>
+            </div>
+        </header>
+        <div id="contact">
+            <h2>Contact</h2>
+            <form>
+                <div class="item">
+                    <label class="label">お名前</label>
+                    <input class="input" type="text" name="name"/>
+                </div>
+                
+                <div class="item">
+                    <label class="label">メールアドレス</label>
+                    <input class="input" type="text" name="email"/>
+                </div>
+                
+                <div class="item">
+                    <label class="label">お問い合わせ内容</label>
+                    <textarea class="input"></textarea>
+                </div>
+                
+                <div class="btn">
+                    <button class="send" type="submit">Submit</button> 
+                </div>
+            </form>
+        </div>
+        <div class="btn-2">
+            <button type="button" class="btn-to-top" onclick="location.href='index.html'">Back</button>
+        </div>
+        <div id="footer">
+            <p>Tomomi Takaoka</p>
+        </div>
+
+    </body>
+</html>
