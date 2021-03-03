@@ -1,62 +1,138 @@
-    /*global $*/
-    /*global anime*/
+/*global $*/
+/*global anime*/
+/*global Chart*/
 
-//H１が表示される
-    let moji = $('#h1').text();
-    $('#h1').html();
-                
-    let count = 0;
-                
-    const animation = () => {
-        let show_moji = moji.substr(count,1);
-        count++;
-                    
-        let span = $('<span>', {text: show_moji});
-        span.css({"color": "rgb(" + (count*15) + "," + (count*15) + "," + (count * 15)});
-        $('#h1').append(span);
-                        
-        span.textContent = moji.substr(0, count);
-                    
-        if(count === moji.length){
-            clearInterval(interval_id);
+//title下のラインが伸びる
+$(window).on('scroll' , function() {
+    $(".line-animation").each(function() {
+        const linePosition = $(this).offset().top;
+        const lineScroll = $(window).scrollTop();
+        const windowHeight2 = $(window).height();
+        
+        if(lineScroll > linePosition - windowHeight2) {
+            $(this).addClass('isActive');
         }
-    };
-        const interval_id = setInterval(animation, 1000);
+    });
+});
+    //H１が表示される
+        let moji = $('#h1').text();
+        $('#h1').html();
+                    
+        let count = 0;
+                    
+        const animation = () => {
+            let show_moji = moji.substr(count,1);
+            count++;
+                        
+            let span = $('<span>', {text: show_moji});
+            span.css({"color": "rgb(" + (count*15) + "," + (count*15) + "," + (count * 15)});
+            $('#h1').append(span);
+                            
+            span.textContent = moji.substr(0, count);
+                        
+            if(count === moji.length){
+                clearInterval(interval_id);
+            }
+        };
+            const interval_id = setInterval(animation, 1000);
+                    
+    
+    //Profile-Policy表示
+        let policy = $('.policyBox');
+        let policyBtn =$('.policyBtn');
+        
+        policyBtn.on('click', function() {
+            policy.toggleClass('toggleB')
+        })
+    
+    
+    //スクロールしてボールが転がる
+        let elem = document.getElementById('elem');
+        window.addEventListener('scroll',() => {
                 
+            let scrollTop = document.scrollingElement.scrollTop;
+                anime({
+                targets: elem,
+                translateX: scrollTop,
+                duration: 2000,
+                loop: false,
+            });
+        }, 10000);
+                
+    //スクロールしてポールが伸びる
+        let elem2 = document.getElementById('elem2');
+        window.addEventListener('scroll',() => {
+            anime({ 
+                targets: elem2,
+                width: 400,
+                duration: 8000,
+                loop: false
+           });
+        }, true);
 
-//Profile-Policy表示
-let policy = $('.policyBox');
-let policyBtn =$('.policyBtn');
+//mobile skill test
 
-policyBtn.on('click', function() {
-    policy.toggleClass('toggleB')
-})
-
-
-//スクロールしてボールが転がる
-    let elem = document.getElementById('elem');
-    window.addEventListener('scroll',() => {
+//mobile スキルグラフ
+        window.onload= function() {
+            const data = {
+                labels: ['HTML', 'CSS', 'JavaScript','jQuery'],
+                datasets:[
+                    {
+                        label: 'basic',
+                        data:[90 ,80 ,40 ,60],
+                        backgroundColor: [
+                            'hsla(90, 60%, 60%, 0.3)',
+                            'hsla(180, 60%, 60%, 0.3)',
+                            'hsla(270, 60%, 60%, 0.3)',
+                            'hsla(360, 60%, 60%, 0.3)',
+                            /*'hsla(0, 60%, 60%, 0.3)',
+                            'hsla(80, 60%, 60%, 0.3)',*/
+                        ],
+                        fill: false,
+                        pointStyle: 'rect'
+                    }
+                ]
+            };
+        
+            const options = {
+                legend: {display: false},
+                responsive: true,
+                scales: {
+                    xAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            fontColor: '#999',
+                            labelString: 'Skill Level'
+                        },
+                        stacked: true,
+                        ticks: {
+                            fontSize:16,
+                            max: 100,
+                            stepSize: 50,
+                        },
+                        /*categoryPercentage: 1.1,
+                        barPercentage: 0.8,*/
+                        categorySpacing: 0
+                    }],
+                    yAxes: [{
+                        stacked: true,
+                        ticks:{
+                            display: false
+                        },
+                        categoryPercentage: 1.0,
+                        barPercentage: 0.9,
+                    }]
+                }
+            };
             
-        let scrollTop = document.scrollingElement.scrollTop;
-            anime({
-            targets: elem,
-            translateX: scrollTop,
-            duration: 2000,
-            loop: false,
-        });
-    }, 10000);
-            
-//スクロールしてポールが伸びる
-    let elem2 = document.getElementById('elem2');
-    window.addEventListener('scroll',() => {
-        anime({ 
-            targets: elem2,
-            width: 400,
-            duration: 8000,
-            loop: false
-       });
-    }, true);
-            
+            var ctx = document.getElementById('mChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'horizontalBar',
+                data: data,
+                options: options
+            });
+        }
+
             
 //スキルグラフ(html)
 //転がるボール
@@ -125,9 +201,9 @@ let mnc = $('.mobile-nav-category');
     });
 */
 
-//
+//m-navの表示
 $(function() {
-    let hum = $('#mobile-nav, .close, .n-profile, .n-skills, .n-works, .n-contact');
+    let hum = $('#mobile-nav, .close, .nav-category');
     let nav = $('.mobile-nav-category');
 
     hum.on('click', function() {
