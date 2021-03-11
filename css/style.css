@@ -1,9 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 /*--------共通部分--------*/
-html, body {
+html, body, input, textarea, button {
     font-size: 10px;    
-    font-family: "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, sans-serif;
+    font-family: 'Cormorant Infant', serif;
+    /*font-family: "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, sans-serif;*/
 }
 header {
    width: 100%;
@@ -22,7 +23,9 @@ h1 {
     margin: 250px;
     text-align: center;
     font-size: 6rem;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+   /* font-family: Georgia, 'Times New Roman', Times, serif;*/
+    font-family: 'Cormorant Infant', serif;
+    
 } 
 
 p{
@@ -62,121 +65,30 @@ h2{
     display: block;
     clear: both;
 }
-
-
-/*------Profile------*/
-/*move to PC
-.content {
-    float: left;
-    margin-left: 100px;
-}
-.left{
-    float: left;
-    margin-left: 300px;
-    margin-top: 30px;
-    max-width: 130px;
-    max-height: 130px;
-    padding-right: 20px;
-}
-.body {
-    float: left;
-    padding-left: 20px;
-    vertical-align: central;
-    width: 50%;
-}
-.policy {
-    margin-left: 350px;
-    padding-top: 40px;
-    clear: both;
-    margin-bottom: 80px;
-}
-.policy p:first-child {
-    margin-left: 50px;
-    font-size: 35px;
-    color: darkgray;        
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-.policy ul li {
-    font-size: 1.75rem;
-}
-*/
-
-
-/*-----Policyボタン-----*/
-/*.policy label {
-    display: inline-block;
-    color: pink;
-    font-size: 2.0rem;
-    background: black;
-    padding: 0.5em 1em;
-    border-radius: 3px;
-    cursor: pointer;
-}
-/*-----ボタンをクリック-----*/
-/*.policy label:active {
-    -webkit-transform: translateY(4px);
-    -moz-transform: translateY(4px);
-    -ms-transform: translateY(4px);
-    transform: translateY(4px);
-    border-bottom: none;
-}
-
-.policy input {
-    display: none;
-}
-
-/*-----表示、非表示の処理-----*/
-/*.policy .policyBox {
-    color: red;
-    overflow: hidden;
-    opacity: 0;
-    transition:0.2s;
-}
-/*-----クリックしたときの処理-----*/
-/*.policy input:checked ~ .policyBox {
+/*-----Profile-----*/
+#profile {
+    background-color: #064e196b;
     height: auto;
-    opacity: 1;
 }
-
-
-/*animation 2*/
-.circle2 {
-    position:absolute;
-    margin-top: 10px;
-}
-.circle2-left{
-    display: inline-block;
-    background-color: #C2EEFF;
-    width: 20px;
-    height: 40px;
-    border-radius: 50%;
-    margin: 0;
-}
-.circle2-middle{
-    display: inline-block;
-    background-color: #FFBEDA;
-    width: 60px;
-    height: 40px;
-    margin-left: -15px;
-}
-.circle2-right{
-    display: inline-block;
-    margin-left: -15px;
-    background-color: #BAD3FF;
-    width: 20px;
-    height: 40px;
-    max-width: 200px;
-    border-radius: 50%;
-}
-
-/*Skill*/
-#skills {
-    padding-top: 40px;
+#profile h2{
+    color: white;
 }
 .pic {
     text-align: center; 
     padding-top: 20px;
 }
+
+
+/*-----Skill-----*/
+#skills {
+    margin-bottom: 70px;
+}
+
+#skills h2 {
+    color: black;
+}
+
+
 .image-vw{
     padding-top:4px;
     width: 6vw;
@@ -187,149 +99,61 @@ h2{
     text-align: center; 
     padding-top: 30px;
 }
-    .skills-body {
-        margin-top: 30px;
-        display: block;
-        text-align: left;
-    }
-/*Graph for html*/
-/*.html-rate{
-    display: inline-block;
-    margin-left: 80px;
-    margin-top: 30px;
-    background-color: #BAD3FF;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-.fadein {
-    opacity: 0;
-    animation: fadein 6s ease forwards;
-}
-@keyframes fadein {
-    100% {  opacity: 1;}
-}
 
-.html-rate-parent {
-    display: inline-block;
-    animation-delay: 4s;
+.skillChart {
+    position: relative;
+    width: calc(80% - 70px);
+    height: 400px;
+    margin: 0 auto;
 }
-.html-rate-left{
-    display: inline-block;
-    background-color: #BAD3FF;
-    width: 20px;
-    height: 40px;
-    border-radius: 50%;
-    margin-left: 300px;
+#mChart {
+    display: block;
+    padding: 6px;
+    margin: 5px auto;
+    width: 100%;
 }
-.html-rate-middle{
-    display: inline-block;
-    background-color: #BAD3FF;
-    width: 60px;
-    height: 40px;
-    margin-left: -15px;
-}
-.html-rate-right{
-    display: inline-block;
-    margin-left: -15px;
-    background-color: #BAD3FF;
-    width: 20px;
-    height: 40px;
-    max-width: 200px;
-    border-radius: 50%;
-}
-
-/*Graph for css*/
-/*.css-rate{
-    display: inline-block;
-    margin-left: 80px;
-    margin-top: 30px;
-    background-color: #77F9C3;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-.fadein {
-    opacity: 0;
-    animation: fadein 6s ease forwards;
-}
-@keyframes fadein {
-    100% {  opacity: 1;}
-}
-
-.css-rate-parent {
-    display: inline-block;
-    animation-delay: 4s;
-}
-.css-rate-left{
-    display: inline-block;
-    background-color: #77F9C3;
-    width: 20px;
-    height: 40px;
-    border-radius: 50%;
-    margin-left: 300px;
-}
-.css-rate-middle{
-    display: inline-block;
-    background-color: #77F9C3;
-    width: 60px;
-    height: 40px;
-    margin-left: -15px;
-}
-.css-rate-right{
-    display: inline-block;
-    margin-left: -15px;
-    background-color: #77F9C3;
-    width: 20px;
-    height: 40px;
-    max-width: 200px;
-    border-radius: 50%;
-}
-
-
-/*sample graph*/
-/*
-.sample-graph {
-    margin-top: 30px;
-    margin-left: 440px;
-    background-color: #FFBEDA;
-    width: 120px;
-    height: 40px;
-    border-radius: 0%;
-    text-align: left;
-    padding-left: 20px;
-}
-
-.sample-graph p {
-    line-height: 40px;
-}
-
-/*Skills Body*/
-/*
-.skills-body{
-    margin: 60px 300px;
-}
-
 /*-----Works------*/
 #works{
-    margin-top: 30px;
+    background-color: #f6e2bd6b;
+}
+
+#works h2 {
+    color: black;
 }
 
 
+/*-----Contact----*/
+
+.contact {
+    padding-top: 20px;
+   /* background: #c7e2ca;*/
+    height: auto;
+    padding-bottom: 20px;
+}
+
+.contact h2 {
+    color: black;
+}
 /*------footer------*/
 #footer {
     margin: auto;
     width: 100%;
     padding: 10px;
-    background: rgb(255, 219, 201);
+    background: rgb(29 62 4);
+    height: 80px;
 }
-
+hr {
+    height: 6px;
+    background-color: #edc9d0;
+    width: 99%;
+    padding: 0;
+    border: none;
+}
 #footer p {
     text-align: right;
-    color: black;
+    color: white;
     padding-right: 20px;
+    font-size: 2.0rem;
 }
 
 
@@ -347,7 +171,7 @@ h2{
     .pc-nav {
         padding: 0;
         z-index: 1;
-        background: rgb(255, 219, 201, 0.5);
+        background: rgb(29 62 4);
         width: 100%;
         position: fixed;
     }
@@ -368,13 +192,13 @@ h2{
         height: 30px;
         margin: 20px;
         padding: 10px;
-        color: darkgray;
+        color: white;
         font-size: 1.7rem;
         text-decoration: none;
     }
     .pc-nav ul li a:hover{
-        background-color: darksalmon;
-        color: white;
+        background-color: white;
+        color: black;
     }  
     
     #toggle {
@@ -384,9 +208,9 @@ h2{
     h2{
         padding-top: 20px;
         margin-left: 250px;
-        color: darkgrey;
+        color: white;
         font-size: 4.0rem;
-        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-family: 'Cormorant Infant', serif;
         clear:left;
     }
     .section {
@@ -411,16 +235,40 @@ h2{
     .slideR.show{
         transform: translate(0, 0) !important;
     }
+    
+    .pc-title-line {
+        position: relative;
+        z-index: 1;
+    }
+    .pc-title-line:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -14px;
+        width: 0%;
+        height: 4px;
+        background: #003300;
+        z-index: -1;
+        transition: all 0.8s;
+    }
+    .pc-title-line.isActive:after {
+        width: 90%;
+    }
 
     /*--------Profile---------*/
+    #profile {
+        background-color: #064e196b;
+        height: auto;
+    }
     
     .content {
+        margin: 40px auto;
+        width: 90%;
         float: left;
-        margin-left: 100px;
     }
     .left{
         float: left;
-        margin-left: 300px;
+        margin-left: 400px;
         margin-top: 30px;
         max-width: 130px;
         max-height: 130px;
@@ -428,69 +276,85 @@ h2{
     }
     .body {
         float: left;
-        padding-left: 20px;
         vertical-align: central;
         width: 50%;
     }
-    /*-----Policyボタン-----*/
+    /*-----Policy-----*/
     .policy {
         clear: left;
         padding: 10px;
-    }
-    .policyBtn {
-        font-size: 1.75rem;
-        padding: 1em 3em;        
-        color: black;
-        border: solid 2px #064E0F;
-        margin-left: 250px;
-        border-radius: 50px;
-        transition: .4s;
-        background: white;
-    }
-    .policyBtn:hover{
-        background: #064E0F;
-        color:white;
-    }
-    .policyBox {
-        margin-left: 350px;
-        opacity: 0;
-        font-size: 1.75rem;
-        color: black;
+        margin: 0 auto;
+        width: 60%;
         margin-bottom: 30px;
     }
-    .toggleB {
-        opacity:1;
+    .arrow-right {
+        position: relative;
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        margin: 0 auto;
+        border-top: solid 4px black;
+        border-right: solid 4px black;
+        transform: rotate(45deg);
+    }
+    h3 {
+        display: inline-block;
+        padding-left: 20px;
+        font-size: 35px;
+        margin-bottom: 10px;
+        color: white;        
+    }
+   
+    .policyFrame {
+        margin-top: 10px;
+        padding: 20px;
+        position: relative;
     }
     
+    .policyFrame::before, .policyFrame::after {
+        content: '';
+        width: 30px;
+        height: 30px;
+        position: absolute;
+    }
+    
+    .policyFrame::before {
+        border-left: solid 3px black;
+        border-top: solid 3px black;
+        top: 0;
+        left: 0;
+    }
+    
+    .policyFrame::after {
+        border-right: solid 3px black;
+        border-bottom: solid 3px black;
+        bottom: 0;
+        right: 0;
+        margin-bottom:50px;
+    }
+    
+    .policyBox ul li {
+        font-size: 1.75rem;
+        list-style-type: decimal-leading-zero;
+    }
     .m-policy {
         display: none;
     }
-    /*
-    .policy {
-        margin-left: 350px;
-        padding-top: 40px;
-        clear: both;
-        margin-bottom: 80px;
-    }
-    .policy p:first-child {
-        margin-left: 50px;
-        font-size: 35px;
-        color: darkgray;        
-        font-family: Georgia, 'Times New Roman', Times, serif;
-    }
-    .policy ul li {
-        font-size: 1.75rem;
-    }
-    */
+    
     
     
     /*-----Skills-----*/
-    .m-skill, #mChart {
-        display: none;
-    }
+    .skills-body {
+    margin-top: 30px;
+    display: block;
+    text-align: left;
+    margin-left: 250px;
+}
+
+    /*-----Works-----*/
     
     #works{
-    margin-top: 30px;
+        height: 100vH;
     }
     .m-work-pic, .image-vw-2-m, .m-work-pic p {
         display: none;
@@ -503,7 +367,8 @@ h2{
         position: relative;
         display: block;
         text-align: center; 
-        overflow: visible;             
+        overflow: visible;    
+        margin-top: 50px;
     }
     
     .image-vw-2{
@@ -535,15 +400,28 @@ h2{
         margin:0;
         padding:0;
     }
+
+    ul .m-work-slider, ul .slick-slider{
+        display: none;
+    }
+    #slick-slide01,
+    .slick-slide, .slick-prev,
+    .slick-arrow, .slick-current, .slick-active
+    {
+        display: none;
+    }
+    
+    
+    /*-----Cotact-----*/
+    #contact {
+        position: absolute;
+        text-align: center;
+    }
     .mobile-contact {
         display: none;
     }
-    #contact {
-    padding-top: 40px;
-
-    }
     .PC-contact {
-        width: 600px;
+        width: 800px;
         margin: 0 auto;
     }
     
@@ -603,6 +481,7 @@ h2{
     .btn-2 {
         text-align: left;
         margin: 50px;
+        background: #c7e2ca;
     }
     
     .btn-to-top {
@@ -615,6 +494,7 @@ h2{
         border: none;
         outline: none;
         padding-top: 1em;
+
     }
     
     .btn-to-top:before {
@@ -634,11 +514,6 @@ h2{
         top: calc(100% - 3px);
     }
     /*-----Contactボタン-----*/
-    .contact {
-        position: absolute;
-        text-align: center;
-    }
-    
     .btn{
         text-align: center;
         padding-bottom: 30px;
@@ -659,147 +534,13 @@ h2{
         border-radius: 50px;
         transition: .4s;
         background: white;
+        margin-bottom: 60px;
+        margin-top: 60px;
     }
     
     .contact-btn:hover{
         background: #064E0F;
         color:white;
-    }
-    
-    /*-----TOP ボタン-----*/
-    #page-top {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-    }
-    
-    #page-top a {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        font-size: 12px;
-        text-decoration: none;
-        color: black;
-        padding: 38px 0;
-        text-align: center;
-        display: inline-block;
-        box-sizing: border-box;
-        background: #99CCFF;
-        border: none;
-    }
-    
-    #page-top a:hover{
-        text-decoration: none;
-        border: solid 0.5px #99CCFF;
-        background: white;
-    }
-
-    /*-----Graph for html-----*/
-    .html-rate {
-        display: inline-block;
-        margin-left: 80px;
-        margin-top: 30px;
-        background-color: #BAD3FF;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        cursor: pointer;
-    }
-    .html-rate-parent {
-        display: inline-block;
-        animation-delay: 4s;
-    }
-    .html-rate-left {
-        display: inline-block;
-        background-color: #BAD3FF;
-        width: 20px;
-        height: 40px;
-        border-radius: 50%;
-        margin-left: 300px;
-    }
-    .html-rate-middle{
-        display: inline-block;
-        background-color: #BAD3FF;
-        width: 60px;
-        height: 40px;
-        margin-left: -15px;
-    }
-    .html-rate-right{
-        display: inline-block;
-        margin-left: -15px;
-        background-color: #BAD3FF;
-        width: 20px;
-        height: 40px;
-        max-width: 200px;
-        border-radius: 50%;
-    }
-    
-    /*-----Graph for css-----*/
-    .css-rate{
-        display: inline-block;
-        margin-left: 80px;
-        margin-top: 30px;
-        background-color: #77F9C3;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        cursor: pointer;
-    }
-    .fadein {
-        opacity: 0;
-        animation: fadein 6s ease forwards;
-    }
-    @keyframes fadein {
-        100% {  opacity: 1;}
-    }
-    
-    .css-rate-parent {
-        display: inline-block;
-        animation-delay: 4s;
-    }
-    .css-rate-left{
-        display: inline-block;
-        background-color: #77F9C3;
-        width: 20px;
-        height: 40px;
-        border-radius: 50%;
-        margin-left: 300px;
-    }
-    .css-rate-middle{
-        display: inline-block;
-        background-color: #77F9C3;
-        width: 60px;
-        height: 40px;
-        margin-left: -15px;
-    }
-    .css-rate-right{
-        display: inline-block;
-        margin-left: -15px;
-        background-color: #77F9C3;
-        width: 20px;
-        height: 40px;
-        max-width: 200px;
-        border-radius: 50%;
-    }
-    
-
-    /*-----sample graph-----*/
-    .sample-graph {
-        margin-top: 30px;
-        margin-left: 440px;
-        background-color: #FFBEDA;
-        width: 120px;
-        height: 40px;
-        border-radius: 0%;
-        text-align: left;
-        padding-left: 20px;
-    }
-    
-    .sample-graph p {
-        line-height: 40px;
-    }
-    .skills-body{
-        margin: 60px 300px;
     }
 }
 
@@ -816,9 +557,13 @@ h2{
         margin: 0;
         width: 100%;
     }
+    h3{
+        display: none;
+    }
     /*---------Menue---------*/
     header {
         display: flex;
+        height: 28px;
     }
     #mobile-nav {
         position: fixed;
@@ -949,8 +694,10 @@ h2{
         padding: 5px;
     }
     .section {
+        min-height: 85vh;
         width: 100%;
-        min-height: 100vh;
+        margin: 0 auto;
+        padding-top: 15px;
     }
     .m-title-line {
         position: relative;
@@ -968,7 +715,7 @@ h2{
         transition: all 0.8s;
     }
     .m-title-line.isActive:after {
-        width: 100%;
+        width: 95%;
     }
     
     
@@ -978,7 +725,6 @@ h2{
     .content {
         position: relative;
         width: 100%;
-        /*margin: 0 18px;*/
         text-align: center;
         margin-left: 0;
     }
@@ -994,88 +740,64 @@ h2{
         padding-top: 10px;
         padding: 5px;
     }
-
-    .policyBtn, .policyBox{
+    
+    .arrow-right, .policyBox, .policyFrame {
         display: none;
     }
     
     .m-policy {
-        margin: 20px 18px 50px 18px;
-    }
+        margin: 10px;
+        padding-bottom: 10px;    
+    }    
     .m-policy p:first-child {
         border-left: solid 4px green;
         padding-left: 10px;
         font-size: 3.0rem;
-        color: darkgray;        
+        color: white;        
         font-family: Georgia, 'Times New Roman', Times, serif;
     }
     .m-policy ul li {
         font-size: 1.75rem;
+        list-style-type: decimal-leading-zero;
     }
-    .circle2 {
-        display: none;
-    }
+
     /*-------Skills--------*/
     .wrapper {
         display: none;
     }
-    #mChart {
-        display: block;
-        padding: 6px;
-        margin: 5px auto;
-        width: 100%;
+    #skills {
+        height: auto;
     }
-    .m-skill {
-        position: relative;
-        width: calc(100% - 40px);
-        height: 100%;
-        overflow: hidden;
-        margin: 20px;
+    .skills-body {
+    margin-top: 30px;
+    display: block;
+    text-align: left;
     }
-
     
     /*-------Works--------*/
     #works{
     margin-top: 30px;
+    height: 100vH;
     }
     .w-pic {
         display: none;
     }
     .w-body {
         text-align: left;
+        padding: 0 5px;
     }
-    .m-work-pic {
-        position: relative;
-        display: block;
-        text-align: center; 
+    .m-slider img {
+        width: 70%;
     }
     
-    .image-vw-2-m{
-        padding-bottom: 20px;
-        width: 60%;
-    }
-    .m-work-pic img {
-        transition-duration: 0.5s;
-    }
-    .m-work-pic img:hover{
-        transform: scale(1.2,1.2);
-        transition-duration: 0.5s;
-    }    
     
-    .m-work-pic p{
-        font-size: 1.75rem;
-        position: absolute;
-        color: black;
-        top: 50%;
-        left: 50%;
-        -ms-transform: translate(-50%,-50%);
-        -webkit-transform: translate(-50%,-50%);
-        transform: translate(-50%,-50%);
-        margin:0;
-        padding:0;
-    }
+    
+    
     
     /*--------Contact----------*/
+    #contact {
+        height: 100vH;
+    }
     .btn {
         display: none;
     }
@@ -1099,46 +821,51 @@ h2{
     .label {
         font-size: 1.7rem;
         float: left;
-        width: 160px;
-        border-left: solid 3px #FF0461;
+        border-left: solid 3px #267817;
         padding-left: 10px;
     }
 
     
-    .input {
-        width: 50%;
+    .input {    
+        float: left;
         margin: 10px 30px;
-        
     }
     
-    input[type="text"], input[type="email"] {
+    input[name="name"] {
         border: solid 1px #aaa;
         border-radius: 5px;
         padding: 5px;
         font-size: 1.7rem;
+    }
+    input[name="address"]{
+        border: solid 1px #aaa;
+        border-radius: 5px;
+        padding: 5px;
+        font-size: 1.7rem;
+        width: 80%;
     }
     textarea {
         border: solid 1px #aaa;
         border-radius: 5px;
         padding: 10px;
         height: 160px;
+        width: 80%;
         font-size: 1.7rem;
     }
     
     /*問い合わせ送信ボタン*/
-    .send { 
-        margin: 10px auto;
-        font-size: 1.6rem;
-        padding: 0.6em 2em;
-        color: black;
-        border: solid 1px #FF367F;
-        border-radius: 50px;
-        transition: .4s;
-        background: white;
+    .m-send { 
+    margin: 10px auto;
+    font-size: 1.4rem;
+    padding: 0.6em 2em;
+    color: black;
+    border: solid 1px darkgrey;
+    transition: .4s;
+    background: white;
     }
     
-    .send:hover{
-        background: #FF367F;
+    .m-send:hover{
+        background: #999697;
         color:white;
     }
 }

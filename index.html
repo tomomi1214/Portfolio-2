@@ -4,10 +4,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/slick.css"/>
+        <link rel="stylesheet" href="css/common.css"/>
         <link rel="icon" href="images/myicon.ico">
         <title>portfolio</title>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-        <script src="anime.min.js"></script>
+        <script src="js/anime.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
     </head>
     
@@ -36,13 +38,13 @@
         </header>
         
         <div id="name">
-            <h1 id ="h1">Tomomi Takaoka</h1>
+            <h1 id ="h1">Hello</h1>
         </div>
         <div class="wrap">
             <div class="circle" id="elem"></div>
         </div>            
         <div id="profile" class="clearfix section slideConts slideR">
-            <h2 class="m-title-line line-animation">Profile</h2>
+            <h2 class="pc-title-line m-title-line line-animation">Profile</h2>
             <div class="content">
                 <img class="left clearfix" src="images/profile.png" alt="profile pic" />
                 <div class="body">
@@ -57,8 +59,9 @@
                 </div>
             </div>
             <div class="policy">
-                <input type="button" value="Policy" class="policyBtn">
-                <div class="policyBox">
+                <div class="arrow-right"></div>
+                <h3>Policy</h3>
+                <div class="policyBox policyFrame">
                     <ul>
                         <li>クライアント様の思いを形にするため、スキルを習得し続けます</li>
                         <li>楽しくかっこよく働きます</li>
@@ -67,7 +70,7 @@
                     <p>
                         Webエンジニアに関するスキルはまだまだ未熟ですが、
                         前職や今までの経験から、楽しく取り組むスキルを習得しました。<br>
-                        クライアント様の思いを形にして、その思いを見た方に伝えられるような作品を制作するために
+                        クライアント様の思いを形にし、その思いを見た方に伝えられるような作品を制作するため
                         これからも楽しく学び続けていきます！
                     </p>
                 </div>
@@ -82,44 +85,15 @@
                     <p>
                         Webエンジニアに関するスキルはまだまだ未熟ですが、
                         前職や今までの経験から、楽しく取り組むスキルを習得しました。<br>
-                        クライアント様の思いを形にして、その思いを見た方に伝えられるような作品を制作するために
+                        クライアント様の思いを形にし、その思いを見た方に伝えられるような作品を制作するため
                         これからも楽しく学び続けていきます！
                     </p>
                 </div>    
             </div>
         </div>
-            
-        
-        <div class="circle2 clearfix">
-            <div class="circle2-left"></div>
-            <div class="circle2-middle" id="elem2"></div>
-            <div class="circle2-right" id="elem3"></div>
-        </div>
-        
-        
         <div id="skills" class="clearfix section slideConts slideL">
-            <h2 class="m-title-line line-animation">Skills</h2>
-            <div class="wrapper">
-                <div class="graph">
-                    <div class="html-rate" id="elem-html"></div>
-                    
-                    <div class="html-rate-parent">
-                        <div class="html-rate-left fadein"></div>
-                        <div class="html-rate-middle fadein" id="elem2-html"></div>
-                        <div class="html-rate-right fadein" id="elem3-html"></div>
-                   </div>
-                </div>
-                <div class="graph">
-                    <div class="css-rate" id="elem-css"></div>
-                    
-                    <div class="css-rate-parent">
-                        <div class="css-rate-left fadein"></div>
-                        <div class="css-rate-middle fadein" id="elem2-css"></div>
-                        <div class="css-rate-right fadein" id="elem3-css"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="m-skill">
+            <h2 class="pc-title-line m-title-line line-animation">Skills</h2>
+            <div class="skillChart">
                 <canvas id="mChart"></canvas>
             </div>
             <p class="skills-body">
@@ -136,7 +110,7 @@
 
         
         <div id="works" class="section slideConts slideR">
-            <h2 class="m-title-line line-animation">Works</h2>
+            <h2 class="pc-title-line m-title-line line-animation">Works</h2>
             <div class="w-body">
                 <p>
                      今後、制作したサイトを更新していく予定です。
@@ -150,45 +124,44 @@
                 <img src="images/work.JPG" alt="work" class="image-vw-2" />
                 <p>Coming Soon</p>
             </div>
-            <div class="m-work-pic">
-                <img src="images/work.JPG" alt="work" class="image-vw-2-m" />
-                <p>Coming Soon</p>
-                <img src="images/work.JPG" alt="work" class="image-vw-2-m" />
-                <p>Coming Soon</p>
-                <img src="images/work.JPG" alt="work" class="image-vw-2-m" />
-                <p>Coming Soon</p>
-            </div>
+            <ul class="m-slider">
+                <li><a href="#"><img src="images/work.JPG" alt="work"></a></li>
+                <li><a href="#"><img src="images/work.JPG" alt="work"></a></li>
+            </ul>
 
         </div>
         
-        <div id="contact" class="clearfix section slideConts slideL">
-            <h2 class="m-title-line line-animation">Contact</h2>
+        <div class="contact clearfix section slideConts slideL">
+            <h2 class="pc-title-line m-title-line line-animation">Contact</h2>
             <div class="btn">
                 <button type="button" class="contact-btn" onclick="location.href='contact.html'">Click here!</button>
             </div>
-            <form class="mobile-contact section">
+            <div class="mobile-contact section">
                 <div class="item">
-                    <label class="label">お名前</label><br><br>
+                    <label class="label nlabel">お名前</label><br><br>
                     <input class="input" type="text" name="name"/>
                 </div>
                 
                 <div class="item">
-                    <label class="label">メールアドレス</label><br><br>
-                    <input class="input" type="text" name="email"/>
+                    <label class="label alabel">メールアドレス</label><br><br>
+                    <input class="input" type="text" name="address"/>
                 </div>
                 
                 <div class="item">
-                    <label class="label">お問い合わせ内容</label><br><br><br>
-                    <textarea class="input"></textarea>
+                    <label class="label ilabel">お問い合わせ内容</label><br><br><br>
+                    <textarea class="input" name="inquiry"></textarea>
                 </div>
                 <div class="contact-btn">
-                    <button class="send" type="submit">Submit</button> 
+                    <button class="m-send" type="submit"> Submit </button> 
                 </div>
-            </form>
+            </div>
         </div>
         <div id="footer">
+            <hr>
             <p>Tomomi Takaoka</p>
         </div>
-    <script src="js/script.js"></script>    
+    <script src="js/script.js"></script>   
+    <script src="js/slick.min.js"></script>
+    <script src="js/common.js"></script>
     </body>
 </html>

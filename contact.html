@@ -3,14 +3,10 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="icon" href="images/myicon.ico">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
         <title>Contact Page</title>
-        <script src="jquery-3.5.1.min.js"></script>
-        <script src="anime.min.js"></script>
-        <script src="js/script.js"></script>
-
-        <style>
-            
-        </style>
+        <script src="js/anime.min.js"></script>
     </head>
     <body>
         <header>
@@ -18,25 +14,13 @@
                 <ul>
                     <li><a href="index.html#profile">Profile</a></li>
                     <li><a href="index.html#skills">Skills</a></li>                    
-                    <li><a href="indexs.html#works">Works</a></li>
+                    <li><a href="index.html#works">Works</a></li>
                 </ul>
-            </div>
-            <div class="mobile-nav-category">
-                <ul>
-                    <li><a href="#">Profile</a></li>
-                    <li><a href="#">Skills</a></li>
-                    <li><a href="#">Works</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li class="close"><span>Close</span></li>
-                </ul>
-            </div>
-            <div id="mobile-nav">
-                <span></span>
             </div>
         </header>
-        <div id="contact">
-            <h2>Contact</h2>
-            <form class=PC-contact>
+        <div class="contact"> 
+            <h2 class="pc-title-line line-animation">Contact</h2>
+            <div class="PC-contact">
                 <div class="item">
                     <label class="label">お名前</label>
                     <input class="input" type="text" name="name"/>
@@ -44,25 +28,27 @@
                 
                 <div class="item">
                     <label class="label">メールアドレス</label>
-                    <input class="input" type="text" name="email"/>
+                    <input class="input" type="text" name="address"/>
                 </div>
                 
                 <div class="item">
                     <label class="label">お問い合わせ内容</label>
-                    <textarea class="input"></textarea>
+                    <textarea class="input" name="inquiry"></textarea>
                 </div>
                 
                 <div class="btn">
                     <button class="send" type="submit">Submit</button> 
                 </div>
-            </form>
-        </div>
-        <div class="btn-2">
+            </div>
+            <div id="disp"></div>
+            <div class="btn-2">
             <button type="button" class="btn-to-top" onclick="location.href='index.html'">Back</button>
+            </div>
         </div>
         <div id="footer">
+            <hr>
             <p>Tomomi Takaoka</p>
         </div>
-
+        <script src="js/script-contact.js"></script>
     </body>
 </html>
