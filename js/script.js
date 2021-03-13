@@ -1,5 +1,4 @@
 /*global $*/
-/*global anime*/
 /*global Chart*/
 
 //画面ロード時に実行
@@ -105,40 +104,23 @@ window.onload= function() {
         options: options
     });
 }
-        
-
-            
-//問い合わせボタン
-$('[type="button"]').click(() => {
-                        
-});
-            
-//Mobile Nav
-$(function() {
-    let hum = $('#mobile-nav, .close, .nav-category');
-    let nav = $('.mobile-nav-category');
-
-    hum.on('click', function() {
-        nav.toggleClass('toggleA');
-    });
-});
       
        
 //サイドからの表示
-var slideConts = document.querySelectorAll('.slideConts');
-var slideContsRect = [];
-var slideContsTop = [];
+let slideConts = document.querySelectorAll('.slideConts');
+let slideContsRect = [];
+let slideContsTop = [];
 // *ウィンドウのスクロール位置を取得
-var windowY = window.pageYOffset;
-var windowH = window.innerHeight;
+let windowY = window.pageYOffset;
+let windowH = window.innerHeight;
     
-var remainder = 100;
+let remainder = 100;
     
 //* 要素の位置を取得
-for (var i = 0; i< slideConts.length; i++) {
+for (let i = 0; i< slideConts.length; i++) {
     slideContsRect.push(slideConts[i].getBoundingClientRect());
 }
-for (var i = 0; i<slideContsRect.length; i++) {
+for (let i = 0; i<slideContsRect.length; i++) {
     slideContsTop.push(slideContsRect[i].top + windowY);
 }
 //* ウィンドウがリサイズされたら、ウィンドウの高さを再取得
@@ -159,9 +141,51 @@ window.addEventListener('scroll',function() {
 });
 
 
+
+
+$(function() {
+//Mobile Nav
+    let hum = $('#mobile-nav, .close, .nav-category');
+    let nav = $('.mobile-nav-category');
+
+    hum.on('click', function() {
+        nav.toggleClass('toggleA');
+    });
+
+
+//Work 画像スライド
+    let count_slider = 0;
+    
+    //PC
+    $('#slider img').eq(1).css('margin-left', '-676px');
+    $('#slider img').eq(2).css('margin-left', '-676px');
+    
+    const slide = () => {
+        $('#slider img').eq(count_slider % 3).animate({'marginLeft': '676px'}, 2000 , function(){
+            $('#slider img').eq(count_slider % 3).css('margin-left', '-676px');
+            count_slider++;
+        });
+        $('#slider img').eq((count_slider + 1) % 3).animate({'marginLeft': '0'}, 2000);
+    };
+    
+    setInterval(slide, 5000);
+    
+    //Mobile
+    $('#m-slider img').eq(1).css('margin-left', '-250px');
+    $('#m-slider img').eq(2).css('margin-left', '-250px');
+    
+    const slide_m = () => {
+        $('#m-slider img').eq(count_slider % 3).animate({'marginLeft': '250px'}, 2000 , function(){
+            $('#m-slider img').eq(count_slider % 3).css('margin-left', '-250px');
+            count_slider++;
+        });
+        $('#m-slider img').eq((count_slider + 1) % 3).animate({'marginLeft': '0'}, 2000);
+    };
+    
+    setInterval(slide_m, 5000);
+
 //Mobile Contactの入力エラーの表示
 //*Submitボタンを押したときの処理
-$(function() {
     $('.m-send').on('click', function() {
         $('span').remove();
 
@@ -184,4 +208,24 @@ $(function() {
            $('.ilabel').after($('<span>', {text: 'お問い合わせ内容を入力してください'}));
         }
     });    
+    
+//スムーススクロール
+    $('a').on('click', function() {
+        
+        // 移動先を0px調整する
+        const adjust = 0;
+        const speed = 1000;
+        
+        const href = $(this).attr("href");
+        
+        const goal =$(href);
+        const position_top = goal.offset().top + adjust;
+        
+        $('body, html').animate({scrollTop: position_top}, speed, 'swing');
+        
+        return false;
+    });
+    
 });
+
+

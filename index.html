@@ -4,11 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/slick.css"/>
-        <link rel="stylesheet" href="css/common.css"/>
         <link rel="icon" href="images/myicon.ico">
-        <title>portfolio</title>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <title>portfolio</title> 
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="js/anime.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
     </head>
@@ -28,7 +26,7 @@
                     <li class="nav-category"><a href="#profile">Profile</a></li>
                     <li class="nav-category"><a href="#skills">Skills</a></li>
                     <li class="nav-category"><a href="#works">Works</a></li>
-                    <li class="nav-category"><a href="#contact">Contact</a></li>
+                    <li class="nav-category"><a href=".contact">Contact</a></li>
                     <li class="close"><span>Close</span></li>
                 </ul>
             </div>
@@ -86,7 +84,7 @@
                         Webエンジニアに関するスキルはまだまだ未熟ですが、
                         前職や今までの経験から、楽しく取り組むスキルを習得しました。<br>
                         クライアント様の思いを形にし、その思いを見た方に伝えられるような作品を制作するため
-                        これからも楽しく学び続けていきます！
+                        これからも楽しく学び続けていきます。
                     </p>
                 </div>    
             </div>
@@ -99,7 +97,7 @@
             <p class="skills-body">
                 ※今後内容は変更します<br>
                 本サイトはHTML、CSS、Javascriptを用いて作成しており、基礎は習得しています。                   
-                今後は応用スキルを習得する！実務で使用していく！<br>
+                今後は応用スキルを習得する、実務で使用していく、<br>
                 という目標を込めてのパーセントとしております。<br>
                 またバックエンド言語としてはPHPを習得していきます。 <br>
                 フロントからバックエンドまで対応できるようになることが目標です。
@@ -116,19 +114,20 @@
                      今後、制作したサイトを更新していく予定です。
                 </p>
             </div>
-            <div class="w-pic">
-                <img src="images/work.JPG" alt="work" class="image-vw-2" />
-                <p>Coming Soon</p>
-                <img src="images/work.JPG" alt="work" class="image-vw-2" />
-                <p>Coming Soon</p>
-                <img src="images/work.JPG" alt="work" class="image-vw-2" />
-                <p>Coming Soon</p>
+            <div class="work-pic">
+                <div id="slider">
+                    <img src="images/work.JPG" alt="work">
+                    <img src="images/work.JPG" alt="work">
+                    <img src="images/work.JPG" alt="work">
+                </div>
             </div>
-            <ul class="m-slider">
-                <li><a href="#"><img src="images/work.JPG" alt="work"></a></li>
-                <li><a href="#"><img src="images/work.JPG" alt="work"></a></li>
-            </ul>
-
+            <div class="m-work-pic">
+            <div id="m-slider">
+                <img src="images/work.JPG" alt="work">
+                <img src="images/work.JPG" alt="work">
+                <img src="images/work.JPG" alt="work">
+            </div>
+            </div>
         </div>
         
         <div class="contact clearfix section slideConts slideL">
@@ -157,11 +156,9 @@
             </div>
         </div>
         <div id="footer">
-            <hr>
             <p>Tomomi Takaoka</p>
+            <hr>
         </div>
     <script src="js/script.js"></script>   
-    <script src="js/slick.min.js"></script>
-    <script src="js/common.js"></script>
     </body>
 </html>

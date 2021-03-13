@@ -1,3 +1,4 @@
+@charset "utf8";
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 /*--------共通部分--------*/
@@ -7,9 +8,10 @@ html, body, input, textarea, button {
     /*font-family: "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, sans-serif;*/
 }
 header {
-   width: 100%;
-   background-color: #fff;
-   top: 0;
+    height: 50px;
+    width: 100%;
+    background-color: #fff;
+    top: 0;
 }
 
 /*nameの表示*/
@@ -121,12 +123,18 @@ h2{
     color: black;
 }
 
+.slick {
+   margin: 10px; 
+}
+.slick li {
+    list-style: none;
+}
 
 /*-----Contact----*/
 
 .contact {
     padding-top: 20px;
-   /* background: #c7e2ca;*/
+    /*background: #c7e2ca;*/
     height: auto;
     padding-bottom: 20px;
 }
@@ -134,13 +142,14 @@ h2{
 .contact h2 {
     color: black;
 }
+
 /*------footer------*/
 #footer {
-    margin: auto;
     width: 100%;
     padding: 10px;
     background: rgb(29 62 4);
     height: 80px;
+    bottom: 0;
 }
 hr {
     height: 6px;
@@ -174,6 +183,7 @@ hr {
         background: rgb(29 62 4);
         width: 100%;
         position: fixed;
+        top: 0;
     }
     .pc-nav ul {
         padding-left: 0;
@@ -212,6 +222,7 @@ hr {
         font-size: 4.0rem;
         font-family: 'Cormorant Infant', serif;
         clear:left;
+        margin-top: 0;
     }
     .section {
         position: relative;
@@ -349,7 +360,7 @@ hr {
     display: block;
     text-align: left;
     margin-left: 250px;
-}
+    }
 
     /*-----Works-----*/
     
@@ -362,60 +373,33 @@ hr {
     .w-body{
         margin-left: 380px;    
     }
-    
-    .w-pic {
-        position: relative;
-        display: block;
-        text-align: center; 
-        overflow: visible;    
+    .work-pic {
+        height: 452px;
+    }
+    #slider {
+        width: 676px;
+        height: 452px;
+        margin: 0 auto;
         margin-top: 50px;
+        position: relative;
+        overflow: hidden;
     }
-    
-    .image-vw-2{
-        padding-bottom: 5px;
-        width: 30%;
-        height:auto;
-        padding: 10px;
-        display: inline-block;
-    }
-    .w-pic img {
-        display: inline-block;
-        transition-duration: 0.5s;
-    }
-    .w-pic img:hover{
-        transform: scale(1.2,1.2);
-        transition-duration: 0.5s;
-    }
-    
-    .w-pic p{
-        margin-left: 40px;
-        font-size: 1.75rem;
+    #slider img {
         position: absolute;
-        color: black;
-        top: 50%;
-        left: 50%;
-        -ms-transform: translate(-50%,-50%);
-        -webkit-transform: translate(-50%,-50%);
-        transform: translate(-50%,-50%);
-        margin:0;
-        padding:0;
+        top: 0;
+        left: 0;
     }
-
-    ul .m-work-slider, ul .slick-slider{
+    .m-work-pic{
         display: none;
     }
-    #slick-slide01,
-    .slick-slide, .slick-prev,
-    .slick-arrow, .slick-current, .slick-active
-    {
-        display: none;
-    }
-    
     
     /*-----Cotact-----*/
     #contact {
-        position: absolute;
-        text-align: center;
+    width: 100%;
+    }
+    
+    #contact h2 {
+        color: black;
     }
     .mobile-contact {
         display: none;
@@ -423,6 +407,7 @@ hr {
     .PC-contact {
         width: 800px;
         margin: 0 auto;
+        padding-top: 40px;
     }
     
     .item {
@@ -465,14 +450,13 @@ hr {
         display: inline-block;
         padding: 0.7em 2em;
         color: black;
-        border: solid 1px #FF367F;
-        border-radius: 50px;
+        border: solid 1px darkgrey;
         transition: .4s;
         background: white;
     }
     
     .send:hover{
-        background: #FF367F;
+        background: darkgrey;
         color:white;
     }
     
@@ -481,7 +465,6 @@ hr {
     .btn-2 {
         text-align: left;
         margin: 50px;
-        background: #c7e2ca;
     }
     
     .btn-to-top {
@@ -494,6 +477,7 @@ hr {
         border: none;
         outline: none;
         padding-top: 1em;
+        margin-bottom: 20px;
 
     }
     
@@ -505,7 +489,7 @@ hr {
         top:100%;
         left: 0;
         border-radius: 3px;
-        background:#FF69B4;
+        background: rgb(29 62 4);
         transition: .2s;
     }
     
@@ -513,7 +497,8 @@ hr {
         top: -webkit-calc(100% - 3px);
         top: calc(100% - 3px);
     }
-    /*-----Contactボタン-----*/
+    
+    /*-----Main page Contactボタン-----*/
     .btn{
         text-align: center;
         padding-bottom: 30px;
@@ -786,12 +771,26 @@ hr {
         text-align: left;
         padding: 0 5px;
     }
-    .m-slider img {
-        width: 70%;
+
+    .work-pic {
+        display: none;
     }
-    
-    
-    
+    .m-work-pic {
+        height: 200px;
+    }
+
+    #m-slider {
+        width: 250px;
+        height: 167px;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+        padding-top: 20px;
+    }
+    #m-slider img {
+        width: 250px;
+        position: absolute;
+    }
     
     
     /*--------Contact----------*/
